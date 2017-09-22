@@ -1,18 +1,25 @@
 import random
+import math
 
 # config
 low = 1
 high = 10
-limit = 4
+limit = math.ceil(math.log((high - low) + 1,2))
 
 # helper functions
 def show_start_screen():
     print("**************************")
+    print("*                        *")
+    print("**************************")
     print("**** Guess a Number ! ****")
+    print("**************************")
+    print("*                        *")
     print("**************************")
 
 def show_credits():
-    print("This awesome game was created by THE Saleem Alnawasreh.")
+    print("OK, see ya later alligator. This awesome game was created by THE Saleem Alnawasreh.")
+    print()
+    print("Executive Producer Dick Wolf")
     
 def get_guess():
     while True:
@@ -26,6 +33,8 @@ def get_guess():
 
 def pick_number():
     print("I'm thinking of a number from " + str(low) + " to " + str(high) +".")
+    print("You'll only have " + str(limit) + " attempts to try and figure out my number. Good Luck!")
+    print()
 
     return random.randint(low, high)
 
@@ -40,14 +49,16 @@ def show_result(guess, rand):
         print("You win!")
     else:
         print("You are such a loser! The number was " + str(rand) + ".")
+        print()
 
 def play_again():
     while True:
         decision = input("Would you like to play again? (y/n) ")
+        decision = decision.lower()
 
-        if decision == 'y' or decision == 'yes':
+        if decision == 'y' or decision == 'yes' or decision == 'yeah' or decision == 'yep' or decision == 'yee' or decision == 'si':
             return True
-        elif decision == 'n' or decision == 'no':
+        elif decision == 'n' or decision == 'no' or decision == 'nah' or decision == 'yeet' or decision == 'nope':
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
