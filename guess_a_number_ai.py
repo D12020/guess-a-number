@@ -2,7 +2,7 @@ import random
 
 # config
 low = 1
-high = 1000
+high = 100
 
 
 # helper functions
@@ -15,40 +15,43 @@ def show_credits():
     pass
     
 def get_guess(current_low, current_high):
-    """
-    Return a truncated average of current low and high.
-    """
-    pass
+    guess = ( current_high + current_low)//2
+    return guess
+
 
 def pick_number():
-    """
-    Ask the player to think of a number between low and high.
-    Then  wait until the player presses enter.
-    """
-    pass
+    print ("Please think of a number between " + str(low) + " and " + str(high) + ".")
+    print("Press 'enter' when ready.")
+    useless_1 = input ()
+  
 
 def check_guess(guess):
-    """
-    Computer will ask if guess was too high, low, or correct.
+    print(guess)
+    test = input("Please tell me if my number was too high, too low, or if I guessed right.")
+    if "low" in test:
+        check = 1
+    if "high" in test:
+        check = -1
+    if "right" in test:
+        check = 0
+    return check
+      
 
-    Returns -1 if the guess was too low
-             0 if the guess was correct
-             1 if the guess was too high
-    """
-
-def show_result():
-    """
-    Says the result of the game. (The computer might always win.)
-    """
-    pass
+def show_result(guess):
+    print()
+    print("HAHA " + str(guess) + " was such an easy number to guess.")
+    print("You'll NEVER win hahahahaha!!!")
+ 
 
 def play_again():
     while True:
+        print()
         decision = input("Would you like to play again? (y/n) ")
 
         if decision == 'y' or decision == 'yes':
             return True
         elif decision == 'n' or decision == 'no':
+            print("OK loser, goodbye. Good luck on other games you'll play becasue you'll need it.")
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
@@ -65,13 +68,12 @@ def play():
         check = check_guess(guess)
 
         if check == -1:
-            # adjust current_low
-            pass
+            current_high = guess
+         
         elif check == 1:
-            # adjust current_high
-            pass
+            current_low = guess
 
-    show_result(guess, rand)
+    show_result(guess)
 
 
 # Game starts running here
