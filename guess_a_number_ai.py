@@ -1,5 +1,5 @@
 import random
-
+# Saleem A
 # config
 low = 1
 high = 100
@@ -16,6 +16,7 @@ def show_credits():
     
 def get_guess(current_low, current_high):
     guess = ( current_high + current_low)//2
+    print("Is the number...")
     return guess
 
 
@@ -28,11 +29,12 @@ def pick_number():
 def check_guess(guess):
     print(guess)
     test = input("Please tell me if my number was too high, too low, or if I guessed right.")
-    if "low" in test:
+    print()
+    if test in ["low", "higher","too low"]:
         check = 1
-    if "high" in test:
+    if test in ["high", "lower", "too high"]:
         check = -1
-    if "right" in test:
+    if test in ["right", "correct", "yes"]:
         check = 0
     return check
       
@@ -49,9 +51,11 @@ def play_again():
         decision = input("Would you like to play again? (y/n) ")
 
         if decision == 'y' or decision == 'yes':
+            print()
             return True
         elif decision == 'n' or decision == 'no':
-            print("OK loser, goodbye. Good luck on other games you'll play becasue you'll need it.")
+            print()
+            print("OK loser, goodbye. Good luck on other games you'll play because you'll need it.")
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
