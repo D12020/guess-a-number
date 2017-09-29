@@ -7,12 +7,27 @@ high = 100
 
 # helper functions
 def show_start_screen():
-    print("*************************")
-    print("*  Guess a Number A.I!  *")
-    print("*************************")
+    print("                                     *            ")
+    print("                                    ***           ")
+    print("                                   *****          ")
+    print("                                 *********        ")
+    print("                             *****************    ")
+    print("                         *************************")
+    print("                         *  Guess a Number A.I!  *")
+    print("                         *************************")
+    print("                             *****************    ")
+    print("                                 *********        ")
+    print("                                   *****          ")
+    print("                                    ***           ")
+    print("                                     *            ")
+    
 
 def show_credits():
-    pass
+    print()
+    print("*********************************************")
+    print("This awesome game was created by THE Saleem. ")
+    print("********* Created on October 1,2017 *********")
+    print("*********************************************")
     
 def get_guess(current_low, current_high):
     guess = ( current_high + current_low)//2
@@ -30,11 +45,11 @@ def check_guess(guess):
     print(guess)
     test = input("Please tell me if my number was too high, too low, or if I guessed right.")
     print()
-    if test in ["low", "higher","too low"]:
+    if test in ["low", "higher","too low", "l"]:
         check = 1
-    if test in ["high", "lower", "too high"]:
+    if test in ["high", "lower", "too high", "h"]:
         check = -1
-    if test in ["right", "correct", "yes"]:
+    if test in ["right", "correct", "yes", "y"]:
         check = 0
     return check
       
