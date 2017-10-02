@@ -1,8 +1,8 @@
 import random
 # Saleem A
 # config
-low = 1
-high = 100
+default_low = 1
+default_high = 100
 
 
 # helper functions
@@ -34,9 +34,27 @@ def get_guess(current_low, current_high):
     print("Is the number...")
     return guess
 
+def decide_number(default_low,default_high):
+    print()
+    decide_1 = input("Would you like to pick numbers for your game?")
+    decide_1 = decide_1.lower()
+    if decide_1 in ["yes","y","yeah","yee","si","yep"]:
+        print()
+        low = input("What would you like your lowest value to be?")
+        low = int(low)
+        print()
+        high = input("What would you like your highest value to be?")
+        high = int(high)
+        
+    else:
+        print("OK, the default values will be used then.")
+        print()
+        low = default_low
+        high = default_high
+        return low,high
 
-def pick_number():
-    print ("Please think of a number between " + str(low) + " and " + str(high) + ".")
+def pick_number (current_low, current_high):
+    print ("Please think of a number between " + str(current_low) + " and " + str(current_high) + ".")
     print("Press 'enter' when ready.")
     useless_1 = input ()
   
@@ -44,14 +62,20 @@ def pick_number():
 def check_guess(guess):
     print(guess)
     test = input("Please tell me if my number was too high, too low, or if I guessed right.")
+    test = test.lower()
     print()
+    
     if test in ["low", "higher","too low", "l"]:
         check = 1
+        return check
     if test in ["high", "lower", "too high", "h"]:
         check = -1
+        return check
     if test in ["right", "correct", "yes", "y"]:
         check = 0
-    return check
+        return check
+    else:
+        print("Please eneter a valid repsponse or else I'll haunt you for the rest of your life.")
       
 
 def show_result(guess):
@@ -76,11 +100,11 @@ def play_again():
             print("I don't understand. Please enter 'y' or 'n'.")
 
 def play():
-    current_low = low
-    current_high = high
+    current_low, current_high = decide_number(default_low,default_high)
     check = -1
-    
-    pick_number()
+
+
+    pick_number (current_low, current_high)
     
     while check != 0:
         guess = get_guess(current_low, current_high)
