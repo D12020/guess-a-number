@@ -20,6 +20,8 @@ def show_start_screen():
     print("                                   *****          ")
     print("                                    ***           ")
     print("                                     *            ")
+
+    
     
 
 def show_credits():
@@ -36,14 +38,14 @@ def get_guess(current_low, current_high):
 
 def decide_number(default_low,default_high):
     print()
-    decide_1 = input("Would you like to pick numbers for your game?")
+    decide_1 = input("Hey " + str(name) + ", would you like to pick numbers for your game? ")
     decide_1 = decide_1.lower()
-    if decide_1 in ["yes","y","yeah","yee","si","yep"]:
+    if decide_1 in ["yes","y","yeah","yee","si","yep", "yes please"]:
         print()
-        low = input("What would you like your lowest value to be?")
+        low = input("What would you like your lowest value to be? ")
         low = int(low)
         print()
-        high = input("What would you like your highest value to be?")
+        high = input("What would you like your highest value to be? ")
         high = int(high)
         
     else:
@@ -51,17 +53,19 @@ def decide_number(default_low,default_high):
         print()
         low = default_low
         high = default_high
-        return low,high
+
+    return low,high
 
 def pick_number (current_low, current_high):
-    print ("Please think of a number between " + str(current_low) + " and " + str(current_high) + ".")
+    print()
+    print (name + " please think of a number between " + str(current_low) + " and " + str(current_high) + ".")
     print("Press 'enter' when ready.")
     useless_1 = input ()
   
 
 def check_guess(guess):
     print(guess)
-    test = input("Please tell me if my number was too high, too low, or if I guessed right.")
+    test = input("Please tell me if my number was too high, too low, or if I guessed right, " + name + ". " )
     test = test.lower()
     print()
     
@@ -81,30 +85,30 @@ def check_guess(guess):
 def show_result(guess):
     print()
     print("HAHA " + str(guess) + " was such an easy number to guess.")
-    print("You'll NEVER win hahahahaha!!!")
+    print("You're so silly " + name + ", you'll NEVER win hahahahaha!!!")
  
 
-def play_again():
+def play_again(name):
     while True:
         print()
-        decision = input("Would you like to play again? (y/n) ")
+        decision = input("Would you like to play again " + name + "? (y/n) ")
 
         if decision == 'y' or decision == 'yes':
             print()
             return True
         elif decision == 'n' or decision == 'no':
             print()
-            print("OK loser, goodbye. Good luck on other games you'll play because you'll need it.")
+            print("OK loser, goodbye. Good luck " + name + " on other games you'll play because you'll need it.")
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
 
-def play():
+def play(name):
     current_low, current_high = decide_number(default_low,default_high)
     check = -1
 
 
-    pick_number (current_low, current_high)
+    pick_number(current_low, current_high)
     
     while check != 0:
         guess = get_guess(current_low, current_high)
@@ -125,8 +129,9 @@ show_start_screen()
 playing = True
 
 while playing:
-    play()
-    playing = play_again()
+    name = input("Hello, welcome to Guess a Number A.I. What is your name? ")
+    play(name)
+    playing = play_again(name)
 
 show_credits()
 
