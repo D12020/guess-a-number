@@ -1,8 +1,11 @@
 import random
+import math
+
 # Saleem A
 # config
 default_low = 1
 default_high = 100
+tries = 1
 
 
 # helper functions
@@ -30,6 +33,10 @@ def show_credits():
     print("This awesome game was created by THE Saleem. ")
     print("********* Created on October 1,2017 *********")
     print("*********************************************")
+
+def find_limit(current_high, current_low):
+    limit = math.ceil(math.log((current_high - current_low) + 1, 2))
+    return limit
     
 def get_guess(current_low, current_high):
     guess = ( current_high + current_low)//2
@@ -63,8 +70,10 @@ def pick_number (current_low, current_high):
     useless_1 = input ()
   
 
-def check_guess(guess):
+def check_guess(guess,tries,limit):
     print(guess)
+    print(str(guess) + "?")
+    print("I have guessed " + str(tries) + "/" + str(limit) + "times")
     test = input("Please tell me if my number was too high, too low, or if I guessed right, " + name + ". " )
     test = test.lower()
     print()
@@ -84,6 +93,8 @@ def check_guess(guess):
 
 def show_result(guess):
     print()
+    print("I guessed your number in only " + str(tries) + "/" + str(limit) + " tries.")
+    print()
     print("HAHA " + str(guess) + " was such an easy number to guess.")
     print("You're so silly " + name + ", you'll NEVER win hahahahaha!!!")
  
@@ -101,9 +112,9 @@ def play_again(name):
             print("OK loser, goodbye. Good luck " + name + " on other games you'll play because you'll need it.")
             return False
         else:
-            print("I don't understand. Please enter 'y' or 'n'.")
+            print("I don't banana. Please enter 'y' or 'n'.")
 
-def play(name):
+def play(name,tries,limit):
     current_low, current_high = decide_number(default_low,default_high)
     check = -1
 
@@ -112,15 +123,16 @@ def play(name):
     
     while check != 0:
         guess = get_guess(current_low, current_high)
-        check = check_guess(guess)
+        check = check_guess(guess,tries,limit)
 
         if check == -1:
             current_high = guess
          
         elif check == 1:
             current_low = guess
+        tries +=1
 
-    show_result(guess)
+    show_result(guess,tries,limit)
 
 
 # Game starts running here
@@ -130,7 +142,7 @@ playing = True
 
 while playing:
     name = input("Hello, welcome to Guess a Number A.I. What is your name? ")
-    play(name)
+    play(name,limit,tries)
     playing = play_again(name)
 
 show_credits()
