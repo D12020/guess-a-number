@@ -5,7 +5,7 @@ import math
 # config
 default_low = 1
 default_high = 100
-tries = 1
+
 
 
 # helper functions
@@ -73,7 +73,7 @@ def pick_number (current_low, current_high):
 def check_guess(guess,tries,limit):
     print(guess)
     print(str(guess) + "?")
-    print("I have guessed " + str(tries) + "/" + str(limit) + "times")
+    print("I have guessed " + str(tries) + "/" + str(limit) + " times")
     test = input("Please tell me if my number was too high, too low, or if I guessed right, " + name + ". " )
     test = test.lower()
     print()
@@ -91,7 +91,7 @@ def check_guess(guess,tries,limit):
         print("Please eneter a valid repsponse or else I'll haunt you for the rest of your life.")
       
 
-def show_result(guess):
+def show_result(guess,tries,limit):
     print()
     print("I guessed your number in only " + str(tries) + "/" + str(limit) + " tries.")
     print()
@@ -103,6 +103,7 @@ def play_again(name):
     while True:
         print()
         decision = input("Would you like to play again " + name + "? (y/n) ")
+        decision = decision.lower()
 
         if decision == 'y' or decision == 'yes':
             print()
@@ -112,14 +113,15 @@ def play_again(name):
             print("OK loser, goodbye. Good luck " + name + " on other games you'll play because you'll need it.")
             return False
         else:
-            print("I don't banana. Please enter 'y' or 'n'.")
+            print("I don't understand. Please enter 'y' or 'n'.")
 
-def play(name,tries,limit):
+def play(name):
     current_low, current_high = decide_number(default_low,default_high)
     check = -1
-
+    tries = 1
 
     pick_number(current_low, current_high)
+    limit = find_limit(current_high,current_low)
     
     while check != 0:
         guess = get_guess(current_low, current_high)
@@ -130,6 +132,7 @@ def play(name,tries,limit):
          
         elif check == 1:
             current_low = guess
+
         tries +=1
 
     show_result(guess,tries,limit)
@@ -142,7 +145,7 @@ playing = True
 
 while playing:
     name = input("Hello, welcome to Guess a Number A.I. What is your name? ")
-    play(name,limit,tries)
+    play(name)
     playing = play_again(name)
 
 show_credits()
