@@ -40,7 +40,6 @@ def find_limit(current_high, current_low):
     
 def get_guess(current_low, current_high):
     guess = ( current_high + current_low)//2
-    print("Is the number...")
     return guess
 
 def decide_number(default_low,default_high):
@@ -71,7 +70,7 @@ def pick_number (current_low, current_high):
   
 
 def check_guess(guess,tries,limit):
-    print(guess)
+    print("Is the number....")
     print(str(guess) + "?")
     print("I have guessed " + str(tries) + "/" + str(limit) + " times")
     test = input("Please tell me if my number was too high, too low, or if I guessed right, " + name + ". " )
