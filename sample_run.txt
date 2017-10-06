@@ -1,0 +1,114 @@
+Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+==== RESTART: C:\Users\salna9911\CP1\guess-a-number\guess_a_number_ai.py ====
+                                     *            
+                                    ***           
+                                   *****          
+                                 *********        
+                             *****************    
+                         *************************
+                         *  Guess a Number A.I!  *
+                         *************************
+                             *****************    
+                                 *********        
+                                   *****          
+                                    ***           
+                                     *            
+Hello, welcome to Guess a Number A.I. What is your name? Saleem
+
+Hey Saleem, would you like to pick numbers for your game? no thanks
+OK, the default values will be used then.
+
+
+Saleem please think of a number between 1 and 100.
+Press 'enter' when ready.
+
+Is the number....
+50?
+I have guessed 1/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. too LOW
+
+Is the number....
+75?
+I have guessed 2/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. l
+
+Is the number....
+87?
+I have guessed 3/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. lower
+
+Is the number....
+81?
+I have guessed 4/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. TOO HIGH
+
+Is the number....
+78?
+I have guessed 5/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. h
+
+Is the number....
+76?
+I have guessed 6/7 times
+Please tell me if my number was too high, too low, or if I guessed right, Saleem. yes
+
+
+I guessed your number in only 6/7 tries.
+
+HAHA 76 was such an easy number to guess.
+You're so silly Saleem, you'll NEVER win hahahahaha!!!
+
+Would you like to play again Saleem? (y/n) Yes
+
+Hello, welcome to Guess a Number A.I. What is your name? Fabio
+
+Hey Fabio, would you like to pick numbers for your game? yes please
+
+What would you like your lowest value to be? 1
+
+What would you like your highest value to be? 25
+
+Fabio please think of a number between 1 and 25.
+Press 'enter' when ready.
+
+Is the number....
+13?
+I have guessed 1/5 times
+Please tell me if my number was too high, too low, or if I guessed right, Fabio. low
+
+Is the number....
+19?
+I have guessed 2/5 times
+Please tell me if my number was too high, too low, or if I guessed right, Fabio. qwerty
+
+Please eneter a valid repsponse or else I'll haunt you for the rest of your life.
+Is the number....
+19?
+I have guessed 3/5 times
+Please tell me if my number was too high, too low, or if I guessed right, Fabio. low
+
+Is the number....
+22?
+I have guessed 4/5 times
+Please tell me if my number was too high, too low, or if I guessed right, Fabio. yes
+
+
+I guessed your number in only 4/5 tries.
+
+HAHA 22 was such an easy number to guess.
+You're so silly Fabio, you'll NEVER win hahahahaha!!!
+
+Would you like to play again Fabio? (y/n) blah blah 
+I don't understand. Please enter 'y' or 'n'.
+
+Would you like to play again Fabio? (y/n) no
+
+OK loser, goodbye. Good luck Fabio on other games you'll play because you'll need it.
+
+*********************************************
+This awesome game was created by THE Saleem. 
+********* Created on October 1,2017 *********
+*********************************************
+>>> 
